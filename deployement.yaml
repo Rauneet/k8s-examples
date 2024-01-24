@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-todo-deployment
+  namespace: rauneet
+  labels:
+    app: django-todo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: django-todo
+  template:
+    metadata:
+      labels:
+        app: django-todo
+    spec:
+      containers:
+      - name: django-todo-ctr
+        image: trainwithshubham/react-django-app:latest
+        ports:
+        - containerPort: 8000

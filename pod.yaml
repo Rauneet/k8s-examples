@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-todo-pod
+  namespace: rauneet
+spec:
+  containers:
+  - name: djnago-todo-ctr
+    image: trainwithshubham/django-todo:latest
+    ports:
+    - containerPort: 8001
